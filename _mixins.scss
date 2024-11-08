@@ -1,0 +1,144 @@
+// mixins.scss
+
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'variable';
+
+// Mixin pour les paramètres de police
+@mixin font-settings(
+  $size,
+  $color,
+  $weight: normal,
+  $family: variable.$font-family,
+  $style: normal,
+  $line-height: normal
+) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  font-family: $family;
+  font-style: $style;
+  line-height: $line-height;
+}
+
+// Mixin pour les boutons
+@mixin button(
+  $bg-color,
+  $text-color,
+  $padding: 10px 20px,
+  $font-size: 16px,
+  $border: none,
+  $border-radius: 5px,
+  $hover-bg-color: null
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: $padding;
+  font-size: $font-size;
+  border: $border;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: if(
+      $hover-bg-color != null,
+      $hover-bg-color,
+      color.adjust($bg-color, $lightness: -10%)
+    );
+  }
+}
+
+// Mixin pour les conteneurs flexibles
+@mixin flex-container(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Mixin pour les images réactives
+@mixin responsive-img(
+  $width: 100%,
+  $height: auto,
+  $object-fit: cover,
+  $border-radius: 0
+) {
+  width: $width;
+  height: $height;
+  object-fit: $object-fit;
+  border-radius: $border-radius;
+}
+
+// Mixin pour les titres
+@mixin heading($size, $color: #333, $margin: 0, $weight: bold) {
+  font-size: $size;
+  color: $color;
+  margin: $margin;
+  font-weight: $weight;
+}
+
+// Mixin pour le texte
+@mixin text-style($size, $color: #666, $margin: 0, $line-height: 1.6) {
+  font-size: $size;
+  color: $color;
+  margin: $margin;
+  line-height: $line-height;
+}
+
+// Mixin pour les bordures arrondies
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+// Mixin pour les positions
+@mixin position(
+  $position,
+  $top: auto,
+  $right: auto,
+  $bottom: auto,
+  $left: auto
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Mixin pour les cartes (cards)
+@mixin card(
+  $bg-color: #fff,
+  $border-color: #ddd,
+  $border-radius: 8px,
+  $padding: 15px,
+  $width: auto
+) {
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $padding;
+  width: $width;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// Mixin pour réinitialiser le layout du footer
+@mixin reset-footer-layout {
+  background-color: variable.$secondary-color;
+  color: variable.$primary-color;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}

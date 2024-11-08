@@ -1,131 +1,171 @@
-@use "mixin" as *;
-@use "variable";
+@use 'variable';
+@use 'mixins' as mixins;
 
 .footer {
-    @include reset-footer-layout;
-    font-family: variable.$font-family;
-    padding-top: 100px;
-    &__subscribe {
-      background-color: #002855;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 0 auto 20px auto;
-  
-      &-text {
-        font-size: 1.2rem;
-        flex: 1;
-        margin-left: 20px;
-        text-align: left;
+  @include mixins.reset-footer-layout;
+  font-family: variable.$font-family;
+  padding-top: 100px;
+
+  &__subscribe {
+    background-color: #002855;
+    @include mixins.flex-container($align: center, $justify: space-between);
+    color: #fff;
+    padding: 20px;
+    @include mixins.border-radius(15px);
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+
+    &-text {
+      @include mixins.font-settings(1.2rem, #fff);
+      flex: 1;
+      margin-left: 20px;
+      text-align: left;
+    }
+
+    &-form {
+      @include mixins.flex-container($align: center);
+      gap: 10px;
+      background-color: #fff;
+      @include mixins.border-radius(10px);
+      padding: 5px 10px;
+
+      &-input {
+        padding: 10px;
+        border: solid 1px #666;
+        @include mixins.border-radius(10px);
+        width: 250px;
       }
-  
-      &-form {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 5px 10px;
-  
-        &-input {
-          padding: 10px;
-          border: solid 1px #666;
-          border-radius: 10px;
-          width: 250px;
-        }
-  
-        &-button {
-          padding: 10px 20px;
-          background-color: #003459;
-          color: #fff;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-  
-          &:hover {
-            background-color: #ff5b4d;
-          }
-        }
+
+      &-button {
+        @include mixins.button(
+          #003459,
+          #fff,
+          10px 20px,
+          null,
+          none,
+          5px,
+          #ff5b4d
+        );
       }
     }
-  
-    &__middle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 20px auto; // Centre horizontalement
-      padding-bottom: 10px;
-      border-bottom: solid 1px #ccc;
-      max-width: 1000px; // Limite la largeur pour éviter les côtés en trop
+  }
+
+  &__middle {
+    @include mixins.flex-container($justify: space-between, $align: center);
+    margin: 20px auto;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ccc;
+    max-width: 1000px;
+  }
+
+  &__nav {
+    &-list {
+      list-style: none;
+      @include mixins.flex-container();
+      gap: 30px;
+      padding: 0;
     }
-  
-    &__nav {
-      &-list {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-        padding: 0;
+
+    &-link {
+      text-decoration: none;
+      @include mixins.font-settings(1rem, #333);
+
+      &:hover {
+        color: #000;
       }
-  
+    }
+  }
+
+  &__social {
+    &-icon {
+      margin: 0 10px;
+      display: inline-block;
+
+      img {
+        @include mixins.responsive-img(20px, 20px, cover, 0);
+      }
+    }
+  }
+
+  &__bottom {
+    @include mixins.flex-container($justify: space-evenly, $align: center);
+    padding-top: 20px;
+
+    &-text {
+      @include mixins.font-settings(0.9rem, #666);
+    }
+
+    &-logo {
+      img {
+        width: 100px;
+      }
+    }
+
+    &-links {
+      @include mixins.flex-container();
+      gap: 15px;
+      text-decoration: none;
+
       &-link {
         text-decoration: none;
-        color: #333;
-        font-size: 1rem;
-  
+        @include mixins.font-settings(0.9rem, #333);
+
         &:hover {
           color: #000;
         }
       }
     }
-  
-    &__social {
-      &-icon {
-        margin: 0 10px;
-        display: inline-block;
-  
-        img {
-          width: 20px;
-          height: 20px;
+  }
+}
+
+// Ajout de la réactivité pour les mobiles
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 50px;
+
+    &__subscribe {
+      @include mixins.flex-container($direction: column, $align: center);
+      text-align: center;
+      padding: 20px;
+      margin: 0 10px 20px 10px;
+
+      &-text {
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
+
+      &-form {
+        @include mixins.flex-container($direction: column);
+        gap: 10px;
+
+        &-input {
+          width: 100%;
         }
       }
     }
-  
+
+    &__middle {
+      @include mixins.flex-container($direction: column, $align: center);
+      margin: 20px 10px;
+      text-align: center;
+
+      &__nav {
+        &-list {
+          @include mixins.flex-container($direction: column);
+          gap: 15px;
+        }
+      }
+    }
+
     &__bottom {
-      display: flex;
-      justify-content:space-evenly;
-      align-items: center;
-      padding-top: 20px;
-  
-      &-text {
-        font-size: 0.9rem;
-        color: #666;
-      }
-  
-      &-logo {
-        img {
-          width: 100px;
-        }
-      }
-  
+      @include mixins.flex-container($direction: column, $align: center);
+      text-align: center;
+      gap: 20px;
+
       &-links {
-        display: flex;
-        gap: 15px;
-        text-decoration: none;
-        &-link {
-          text-decoration: none; // Assure qu'il n'y a pas de ligne sous le texte
-          color: #333;
-          font-size: 0.9rem;
-  
-          &:hover {
-            color: #000;
-          }
-        }
+        @include mixins.flex-container($direction: column);
+        gap: 10px;
       }
     }
   }
-  
+}

@@ -1,18 +1,17 @@
+// header.scss
+
 @use "variable";
+@use "mixins" as mixins;
 
 .container {
   background-color: variable.$secondary-color;
-  display: flex;
-  flex-direction: column;
+  @include mixins.flex-container($direction: column);
 }
 
 /* Header */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  @include mixins.flex-container($align: center, $justify: space-around);
   padding: 10px 20px;
-
   margin-right: 10%;
 
   &__logo {
@@ -22,11 +21,11 @@
   }
 
   &__nav {
-    display: flex;
+    @include mixins.flex-container();
     margin-left: 70px;
 
     &-list {
-      display: flex;
+      @include mixins.flex-container();
       list-style: none;
       margin: 0;
       padding: 0;
@@ -38,12 +37,13 @@
 
     &-link {
       text-decoration: none;
-      font-family: variable.$font-family;
-      font-weight: 700;
-
-      color: variable.$primary-color;
-      font-size: 15px;
-      line-height: 14px;
+      @include mixins.font-settings(
+        15px,
+        variable.$primary-color,
+        $weight: 700,
+        $family: variable.$font-family,
+        $line-height: 14px
+      );
 
       &:hover {
         text-decoration: underline;
@@ -52,20 +52,16 @@
   }
 
   &__login-btn {
-    background-color: variable.$primary-color;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 60px;
+    @include mixins.button(
+      variable.$primary-color,
+      #fff,
+      $padding: 10px 60px,
+      $font-size: 16px,
+      $border: none,
+      $border-radius: 20px,
+      $hover-bg-color: #555
+    );
     margin-right: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
-
-    &:hover {
-      background-color: #555;
-    }
 
     &:focus {
       outline: none;
@@ -74,9 +70,8 @@
   }
 
   &__search {
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
+    @include mixins.flex-container($align: center);
+    @include mixins.border-radius(20px);
     padding: 5px;
     max-width: 300px;
     width: 100%;
@@ -88,9 +83,7 @@
       border: none;
       cursor: pointer;
       padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include mixins.flex-container($align: center, $justify: center);
 
       &-img {
         width: 20px;
@@ -109,78 +102,78 @@
 }
 
 .accueil {
-  display: flex;
+  @include mixins.flex-container();
   height: 70vh;
 
   &__left,
   &__right {
-    
-
-    justify-content: center;
+    @include mixins.flex-container($direction: column, $justify: center);
     padding: 20px;
   }
 
   &__left {
     background-color: variable.$secondary-color;
-    
-    
     color: variable.$primary-color;
     font-family: variable.$font-family;
     width: 40%;
     margin-left: 10%;
 
     &-title {
-      font-size: 66px;
-      font-weight: bold;
-      margin: 0;
+      @include mixins.heading(
+        66px,
+        variable.$primary-color,
+        $margin: 0,
+        $weight: bold
+      );
     }
 
     &-subtitle {
-      font-size: 40px;
-      margin: 10px 0;
+      @include mixins.heading(
+        40px,
+        variable.$primary-color,
+        $margin: 10px 0,
+        $weight: normal
+      );
     }
 
     &-text {
-      font-size: 16px;
-      margin: 15px 0;
-      line-height: 1.6;
+      @include mixins.text-style(
+        16px,
+        variable.$primary-color,
+        $margin: 15px 0,
+        $line-height: 1.6
+      );
     }
 
     &-btn {
-      display: flex;
+      position: relative; // Ajouté pour le positionnement absolu du bouton 2
+      @include mixins.flex-container($direction: row);
       gap: 10px;
-      flex-direction: row;
-      
-      
 
-      &1,
-      &2 {
-        padding: 10px 10px;
-        font-size: 14px;
+      &-1 {
+        @include mixins.button(
+          $bg-color: #fff,
+          $text-color: variable.$primary-color,
+          $padding: 10px 10px,
+          $font-size: 14px,
+          $border: none,
+          $border-radius: 20px
+        );
         font-weight: 700;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
         display: flex;
         align-items: center;
-      }
-
-      &1 {
-        background-color: #fff;
-        color: variable.$primary-color;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
         border: none;
 
         &-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          @include mixins.flex-container($align: center, $justify: center);
           width: 24px; // Taille du cercle
           height: 24px;
-          border-radius: 50%; // Forme circulaire
+          @include mixins.border-radius(50%); // Forme circulaire
           background-color: transparent;
           border: 2px solid variable.$primary-color; // Bordure du cercle
-          margin-left: 10px; // Espace entre le texte et l’icône
-          // Ajustement du remplissage pour centrer le SVG
+          margin-left: 10px; // Espace entre le texte et l'icône
         }
 
         svg {
@@ -189,13 +182,35 @@
         }
       }
 
-      &2 {
-        background-color: variable.$primary-color;
-        position: absolute;
+      &-2 {
+        @include mixins.button(
+          $bg-color: variable.$primary-color,
+          $text-color: #fff,
+          $padding: 10px 10px,
+          $font-size: 14px,
+          $border: 2px solid variable.$primary-color,
+          $border-radius: 20px
+        );
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        // Ajustement du positionnement du bouton 2
+        // Au lieu d'utiliser position: absolute, on le laisse dans le flux normal
+        // pour une meilleure réactivité
+        // Supprimer le positionnement absolu
+        // @include mixins.position(
+        //   $position: absolute,
+        //   $left: 400px,
+        //   $top: 585px
+        // );
+
+        // Si vous souhaitez le positionner, utilisez les marges
         margin-left: 150px;
-        margin-top:-44px;
-        color: #fff;
-        border: 2px solid variable.$primary-color;
+        margin-top: -40px;
+
       }
     }
   }
@@ -206,8 +221,120 @@
     padding: 0;
 
     &-img {
-      width: auto;
-      height: 100%;
+      @include mixins.responsive-img($width: auto, $height: 100%);
+    }
+  }
+}
+
+/* Media Queries pour la réactivité */
+@media (max-width: 1024px) {
+  .header {
+    margin-right: 0;
+
+    &__logo {
+      margin-left: 0;
+    }
+
+    &__nav {
+      margin-left: 0;
+
+      &-list {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    &__search {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+
+  .accueil {
+    flex-direction: column;
+
+    &__left,
+    &__right {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &__left {
+      align-items: center;
+      text-align: center;
+
+      &-title {
+        font-size: 48px;
+      }
+
+      &-subtitle {
+        font-size: 32px;
+      }
+
+      &-btn {
+        flex-direction: column;
+        gap: 10px;
+
+        &-2 {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__right {
+      &-img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+
+    &__nav {
+      &-list {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &-item {
+        margin: 10px 0;
+      }
+    }
+
+    &__login-btn {
+      margin: 10px 0;
+    }
+
+    &__search {
+      margin: 10px 0;
+    }
+  }
+
+  .accueil {
+
+    
+    &__left {
+      &-title {
+        font-size: 36px;
+      }
+
+      &-subtitle {
+        font-size: 24px;
+      }
+
+      &-btn {
+
+        &-2 {
+          font-size: 12px;
+          margin-left: 0px;
+          margin-top: 10px;
+        }
+      }
     }
   }
 }
