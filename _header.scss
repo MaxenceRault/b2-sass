@@ -1,0 +1,213 @@
+@use "variable";
+
+.container {
+  background-color: variable.$secondary-color;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 20px;
+
+  margin-right: 10%;
+
+  &__logo {
+    height: 50px;
+    width: auto;
+    margin-left: 10%;
+  }
+
+  &__nav {
+    display: flex;
+    margin-left: 70px;
+
+    &-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      margin: 0 15px;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-family: variable.$font-family;
+      font-weight: 700;
+
+      color: variable.$primary-color;
+      font-size: 15px;
+      line-height: 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__login-btn {
+    background-color: variable.$primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 60px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #555;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 5px;
+    max-width: 300px;
+    width: 100%;
+    margin-left: 130px;
+    background-color: #fff;
+
+    &-icon {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &-input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 5px;
+      font-size: 16px;
+    }
+  }
+}
+
+.accueil {
+  display: flex;
+  height: 70vh;
+
+  &__left,
+  &__right {
+    
+
+    justify-content: center;
+    padding: 20px;
+  }
+
+  &__left {
+    background-color: variable.$secondary-color;
+    
+    
+    color: variable.$primary-color;
+    font-family: variable.$font-family;
+    width: 40%;
+    margin-left: 10%;
+
+    &-title {
+      font-size: 66px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    &-subtitle {
+      font-size: 40px;
+      margin: 10px 0;
+    }
+
+    &-text {
+      font-size: 16px;
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+
+    &-btn {
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+      
+      
+
+      &1,
+      &2 {
+        padding: 10px 10px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      &1 {
+        background-color: #fff;
+        color: variable.$primary-color;
+        border: none;
+
+        &-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px; // Taille du cercle
+          height: 24px;
+          border-radius: 50%; // Forme circulaire
+          background-color: transparent;
+          border: 2px solid variable.$primary-color; // Bordure du cercle
+          margin-left: 10px; // Espace entre le texte et l’icône
+          // Ajustement du remplissage pour centrer le SVG
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      &2 {
+        background-color: variable.$primary-color;
+        position: absolute;
+        margin-left: 150px;
+        margin-top:-44px;
+        color: #fff;
+        border: 2px solid variable.$primary-color;
+      }
+    }
+  }
+
+  &__right {
+    background-color: variable.$secondary-color;
+    width: 60%;
+    padding: 0;
+
+    &-img {
+      width: auto;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="./images/Logo.png" alt="Logo" class="header__logo" />
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="index.html" class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Catégorie</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">About</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__search">
+          <button class="header__search-icon">
+            <img
+              src="https://img.icons8.com/?size=100&id=82712&format=png&color=000000"
+              alt="Search Icon"
+              class="header__search-icon-img"
+            />
+          </button>
+          <input
+            type="text"
+            class="header__search-input"
+            placeholder="Search something here"
+          />
+        </div>
+        <button class="header__login-btn">Login</button>
+      </header>
+
+      <div class="accueil">
+        <div class="accueil__left">
+          <h1 class="accueil__left-title">One more friend</h1>
+          <h2 class="accueil__left-subtitle">Thousands more fun!</h2>
+          <p class="accueil__left-text">
+            Having a pet means you have more joy, a new friend, a happy person
+            who will always be with you to have fun. We have 200+ different pets
+            that can meet your needs!
+          </p>
+          <div class="accueil_left-btn">
+            <button class="accueil__left-btn1">
+              View Intro
+              <div class="accueil__left-btn1-icon">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.86651 6.35738L6.8601 9.94824L9.85569 8.15816L6.86651 6.35738Z"
+                    fill="#003459"
+                    stroke="#003459"
+                    stroke-width="0.897717"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button class="accueil__left-btn2">Explore Now</button>
+          </div>
+        </div>
+        <div class="accueil__right">
+          <img
+            src="./images/Accueil.png"
+            alt="Accueil"
+            class="accueil__right-img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="liste">
+      <div class="liste__header">
+        <div class="liste__header-left">
+          <p>What's new?</p>
+          <h2>Take a look at some of our pets</h2>
+        </div>
+        <div class="liste__header-right">
+          <button class="liste__header-button">View More</button>
+        </div>
+      </div>
+
+      <div class="liste__content">
+        <div class="liste__content__display">
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/24e2/536a/e8951f7e58a6a251b78040d254e6a249?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LzIepPdQqwixfK-ir3ma3LEyYbKv8yZO2bnfxvrko-sVsojRplooDSE~tTnt-JCersG5l-G1a2GpQ8Xh8Rk3RNauPVyr19hSF7y~rcRgbvRkdYWcsgm2586yc1C0fB8iFx7vp7FArVD8dwhR6Ry2npSDSt3XNMvSxjxN2E4itp1-ZxW7ZR5yuazHdvq7hW86O~OMUzV5LbL0BazsnZPljHqeWuGqx46q3~rTXTBfv4mIkYmBXex2Qb0BaQPmXicDvteK8KiM3s53ntzbKf4qUIAxKfeVyD4o6Hh4w12hrA-7i96E3Fyc6RdKKtgfGv6wO9njKKP0LZ9XlvcfFDIiSw__"
+              alt="Pomeranian White"
+            />
+            <p class="liste__content__display__card__title">
+              MO231 - Pomeranian White
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Male ⸱</strong> Age : <strong> 02 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">6.900.000 VND</p>
+          </div>
+
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/7a07/8273/4148161cacc96954a826ffc3289184f5?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jnv8LvTBmGhQ194dcpP29hM--Fvuk6qltQPCcsVG5tt493DsWDk~f5qkl9OfjDfVzKO4f8nhnUuUlT6DBzVU75QVbnsCYdmbFI~1j84jQmBbYfPrN74ryh5ofEGXhh-7m-mVbn4y03iy7CfoWXHRK8xs4cVTu0kUxhl72an2E~OfB7taL7xc5V~2kW1-tqt00iO1xH5q8rWlfljAl0NFIL-6PT86i2ItYGxZyGGYKZexTRm8rEEPyd79M759e1Xag1~TqcjwTUSpf5DS94wPhwHhdccAy58JD6vLvKlHheU8eqp~3GyIYzn6NTHzzTA4imYqCKdaHYhs3L3ufFLDhg__"
+              alt="Poodle Tiny Yellow"
+            />
+            <p class="liste__content__display__card__title">
+              MO502 - Poodle Tiny Yellow
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Female ⸱</strong> Age :
+              <strong> 02 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">3.900.000 VND</p>
+          </div>
+
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/de56/e2ad/1bc5c988b7f2f1c902b04343b33db4b8?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jyy9qpm-JbTSUGYolJhody0eIhPl52lB21ASqbXB2AfvC9H0GLWQhItfaeGyS-jIPoXAFAJ8sYjxXu839Dwi84TdoOdl70bD-JjQptQ7M887AGWkZ1SJ0puK91c-hNR2i4vMlSNVMShG2amdBOZ6nPA3kk~IhVMt0P0-ci5my-w0Z~iEqwDqOfFjS86frv1MyPWluuoEhbYKDwNAgTDP7glpZQO~OTW-g0~64At2VjgsZdidsSU0mkpYNefCSCijyK3dvRUh9D0mqOnCt32iOBfDWxkXvKXGHYrMDiMAniaCnSHTUwEZz3wmUj-hE4Xy16eh4bt4sPZY5MxucZ8G5A__"
+              alt="Poodle Tiny Sepia"
+            />
+            <p class="liste__content__display__card__title">
+              MO102 - Poodle Tiny Sepia
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Male ⸱</strong> Age : <strong> 02 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">4.000.000 VND</p>
+          </div>
+
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/e7f5/3699/cabeeebe1148580b0bf3867e88b40d6e?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ixTp5Bp4YX84gnthjeQ1uFilWb8DtsY08wrHleqWM3gz4HjHGvp9nwEzQpAsDPE8D-FhiHxM8DmMuQCnQQMYJHPLBvts5wQT6dNXfoDWxRWurobBwFw3s00DAeQizuseXmDyc5L3aNVk6O5dzHWi0U2Dwn70vi13MwkJ9wyz1-JKbkwoGI8m1aa3~1joojDPXoEJlEnRMPETw0BRpZanxy4~xd0NE604vqGLzSCVcwfA4yvCNlsy4eGKJIcObMEMIpCvSqXRGybKNzjRlme6Gi3e~~YrVe2ionJysVc~MwyRdeg5oGKQokcLhWJqQQ3-0Laq4AOeIOTa11siZ1IfPg__"
+              alt="Alaskan Malamute Grey"
+            />
+            <p class="liste__content__display__card__title">
+              MO512 - Alaskan Malamute Grey
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Male ⸱</strong> Age : <strong> 03 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">8.900.000 VND</p>
+          </div>
+
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/83bf/ee26/1c595ef8d9ccb544066f9692c48a068b?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p5dAD1tYRYXG7HimsEMRlBJGIG7FCBrw7SPQ2qdos4lzdx~d~t1aNsnhawZmKYRrEKgcjehvKHZGN9rqkQ4aS73NSmoOcOfqqphNhlgR2ynGIvXbNlBFmNG8JQN8rDmZPdKWHWZ4nPUny~Brs~-TWiWIpMfkL4frbOa-AN86O5ERyukKnNoSrrMixbuXXpuvd~A3aW49-OunBYLZdEdmsfIirwaFCKQaTC3zhIcW3XenydL3YIWNgGl193Nc6MrK8Ken8AsbM4HGYpaWNvNlJ2yeLDsLyVk2HsPqrWhMXZ01UL3KGPUbexLvBFKGzzvAeq4XJ4VdZmE4QY19YVNOMw__"
+              alt="Pembroke Corgi Cream"
+            />
+            <p class="liste__content__display__card__title">
+              MO231 - Pembroke Corgi Cream
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Male ⸱</strong> Age : <strong> 03 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">7.900.000 VND</p>
+          </div>
+
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/865c/fc8b/e8becb4c33e3be0be27489c8df8ffe0f?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p1Rzhk~gTK2F7v1cPJsXKgJGeTJmaMlaMrCINs8Z8XKJ2tRCCTJ3z~PxlCMBwO-Ef~Z5KvnEHQV9F5Q74AR~6TQs6vfriXBVIZ3dNUU~uaP4so4x4lbA1yZrfLBTxkCEz9Q~H5fSGwCzl2yRB8FAhgTmnrHUk3rAa91RvYaxyRMwGwEiUSw6jXtLAKGHUxcsTX17LzbPp1-9cVzXoLW~HLVW1xv4T~tzZ9-tqpnKt5DrRe6QqA5-OYRC1T3feMT3WuygVoSKbHGkFujJLKlOfNyduL5HrLj97hRJ70ATchn6yZFwZPDzcHAB7xwODtRih0quuQAFKR7ilSocIqTsWg__"
+              alt="Pembroke Corgi Tricolor"
+            />
+            <p class="liste__content__display__card__title">
+              MO502 - Pembroke Corgi Tricolor
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Female ⸱</strong> Age :
+              <strong> 02 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">9.000.000 VND</p>
+          </div>
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/d36f/9b5a/36ff33370c382f781520c0e462642d58?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RKtZL8HS6JZ38dBoGQ8-sCl6ElDvzhtKZI7skQPV5-~FuKrbYM6qUi~4it~dBYaHfpgh6GESqq4Or~zAFfc3cEMKxCGxg2wUQOzdWNdifwoNrD9U-w8M7ItcCGO3Jfu62D8Agh4S6D2asUB02N7fMtZXZiRsf7AuhwObVhQ52QFOhX2vIR0PeMGrK81hsn-R~Yj4pHCZ6h9A5HzFzS4LdLq99P7IS-o1-kR1--El1hT7SBgp-oUOx~OimeXuQIuObEkrKlyI8O8XuZ1nsJPq~idDV5L4UN4NbjPlfE2WMNUVL0fc1x1d7mPnwbRzW4WAzW6OZwfwKwkU4gYu~TEzBQ__"
+              alt=""
+            />
+            <p class="liste__content__display__card__title">
+              MO102 - Pomeranian Grey
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Female ⸱</strong> Age :
+              <strong> 02 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">6.500.000 VND</p>
+          </div>
+
+          <div class="liste__content__display__card">
+            <img
+              class="liste__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/3914/ac40/41489c742055122b18baafc268372fe5?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aRZEYKNWUxkctP03VrpV7AqbMPfxIBHG1Oldk4FmoFTdubETb-woen2eZwjJH8PxpOo62kFKZH7A-BnkkGIRigKdgePXqXa08IDonBYMpA87XVY38tt4n8IL88i3U7kk~LhmJ0jsFkC2Jj3NCD5CniUug~KGTJAVMS3sruLa6w8iLiOvJTQJrX5oAIdxSx5BkabIFwcOPSmbHEH63up-BsDP53UPBb70oS4n3g76mJg6lMQhRUWTs6zSb9ZHWcbcM3Pomni984~ZWzrBiNWxLIBQQYeKMs35gT8xnfNDtQV0nlgFzJyHikjNdnrBsJTrgC7Xct~HTqdhYUZZgAY2QA__"
+              alt="Poodle Tiny Dairy Cow"
+            />
+            <p class="liste__content__display__card__title">
+              MO512 - Poodle Tiny Dairy Cow
+            </p>
+            <p class="liste__content__display__card__info">
+              Genre : <strong> Male ⸱</strong> Age : <strong> 03 Months</strong>
+            </p>
+            <p class="liste__content__display__card__price">5.000.000 VND</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-section">
+      <div class="intro-section__image">
+        <img
+          src="./images/Intro.png"
+          alt="Intro Image"
+          class="intro-section__image-img"
+        />
+      </div>
+
+      <div class="intro-section__content">
+        <h1 class="intro-section__title">One more friend</h1>
+        <h2 class="intro-section__subtitle">Thousands more fun!</h2>
+        <p class="intro-section__text">
+          Having a pet means you have more joy, a new friend, a happy person who
+          will always be with you to have fun. We have 200+ different pets that
+          can meet your needs!
+        </p>
+        <div class="intro-section__buttons">
+          <button class="intro-section__btn intro-section__btn--primary">
+            View Intro
+            <div class="intro-section__btn-icon">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.86651 6.35738L6.8601 9.94824L9.85569 8.15816L6.86651 6.35738Z"
+                  fill="#003459"
+                  stroke="#003459"
+                  stroke-width="0.897717"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </button>
+          <button class="intro-section__btn intro-section__btn--secondary">
+            Explore Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pet">
+        <div class="pet__header">
+          <div class="pet__header-left">
+            <p>What's new?</p>
+            <h2>Take a look at some of our pets</h2>
+          </div>
+          <div class="pet__header-right">
+            <button class="liste__header-button">View More</button>
+          </div>
+        </div>
+  
+        <div class="pet__content">
+          <div class="pet__content__display">
+            <div class="pet__content__display__card">
+              <img
+                class="pet__content__display__card__img"
+                src="https://s3-alpha-sig.figma.com/img/164b/8551/c113c74555b6aeaec9a5b979c2ee53d4?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qUA29CjOj9DJpfHoG1fYxyk~yZMI8RLi-obRPYG~axsWhs46gIsA~T2fjtU-AzZuCbZLOkmYpY9glsQQ3QVmJKpEiIE14spubTOn8FB3alJ2~CueCUCfXTGCv38sjG4j-y~aKzs87w7eWkoM2gahkfmRCa2s7NjntzdZrsakccjSB-CVxz7B3rhY9Fu0GyRhljjIFjFhbG~wkdwCFuOoFoEALWbfW35OvcSeeXNQqrVQ9BAqT2lh7jrQJtYJuDnqBQboJ1yaDM651RZN3vMqyCjA4EMhwpuSmIPAKp0D9omD8kFgVhyz5jzwC0QK6tGZtBy7rhnSoMh9XlsyhWEqCw__"
+                alt="Pomeranian White"
+              />
+              <p class="pet__content__display__card__knowledge">pet knowledge</p>
+              <p class="pet__content__display__card__title">
+                What is a Pomeranian? How to Identify Pomeranian Dogs
+              </p>
+                <p class="pet__content__display__card__info">
+                    The Pomeranian , also known as the Pomeranian (Pomdog), is always in the top of the cutest pets. Not only that, the small, friendly, and skillful circu...
+                </p>
+          </div>
+          <div class="pet__content__display__card">
+            <img
+              class="pet__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/5e97/6f4f/0a476f3dabcbcedb02310d51a05973ad?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=YH23Bem1Igi9r7WFFnO9-4w8Z-axbs1eVyaqH9g0OiPRgJJk9Gz3AZyNNCRk5PVxq~4qM7DawN38vJZogxA-EWnEFbDtb9orxyr5SPSTMNmmYZpXhBHuulakZSV4bOeBG3TTkSMnrwV2KsvFlj9MB0WyaZuUgpMukR583n3jx2sfFyS5wK~05qWKPiOXwXrPktcZ6xyfR1yBMFJco7LmPl7iGfgBdTUwEnBIPro7h-ZIIxxYm7oK4VV67VOMnY0HKJ3THhDX7~VUs3PlYppOM5KAlUhOI~1MopO-NBYCzo-~vTptePBgpji5sOQ-MT56L0NBQnDy-Oi4oG5EyjspbQ__"
+              alt="DOGO"
+            />
+            <p class="pet__content__display__card__knowledge">pet knowledge</p>
+            <p class="pet__content__display__card__title">
+                Dog Diet You Need To Know
+            </p>
+              <p class="pet__content__display__card__info">
+                Dividing a dog's diet may seem simple at first, but there are some rules you should know so that your dog can easily absorb the nutrients in the diet. For those who are just starting to raise dogs, especially newborn puppies with relatively weak resistance.              </p>
+        </div>
+        <div class="pet__content__display__card">
+            <img
+              class="pet__content__display__card__img"
+              src="https://s3-alpha-sig.figma.com/img/9c94/ebaa/40056d6caaf1af31cf6dd3725c34eb7f?Expires=1731888000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=V~da4-Xhc1mMxKRVNQ3GoUexQfbQhkYRe7CfzVniamtXPfV5k2Z~wONrZA3v~pCttv76f09czVy5Ir6xczaA-b0AX-VVMTQ6vOPNjiVN2~vA5NIen5810HNQzroEShHtnHq469hP08ioTzq265C1cYFvMI36kx3nYuzoy3iURiIoZsIwBXnG55VxnD9Q~6DT2MHaA8R6WLTg~ZpAI-Q2eOqz8Us2tAtTOqy8ZKaMQfca-aJaheowspLj6o1jRK6xL4m3tDrWnt7O6NRrEqgwvWVS2gwJD84ZsAUFI23Vz4L7o7~VDimLNdv3yKXWEYJCkXeq6Fd~sarFm65qZKf59A__"
+              alt="DOGO"
+            />
+            <p class="pet__content__display__card__knowledge">pet knowledge</p>
+            <p class="pet__content__display__card__title">
+                Why Dogs Bite and Destroy Furniture and How to Prevent It Effectively
+            </p>
+              <p class="pet__content__display__card__info">
+                Dog bites are common during development. However, no one wants to see their furniture or important items being bitten by a dog.              </p>
+        </div>
+        </div>
+      </div>
+      
+  </body>
+</html>
