@@ -166,24 +166,20 @@
     flex-direction: row;
 
     &--primary {
-      background-color: #003459;
-
-      color: #fff;
+      background-color: #fff;
+      margin-left:155px;
+      color: variable.$primary-color;
       border: none;
 
-      &:hover {
-        background-color: #002a47;
-      }
+      
     }
 
     &--secondary {
-      background-color: #fff;
-      color: #003459;
+      background-color: variable.$primary-color;
+      color: #fff;
       border: 2px solid #003459;
-
-      &:hover {
-        background-color: #f0f0f0;
-      }
+      margin-top: -45px;
+      
     }
 
     &-icon {

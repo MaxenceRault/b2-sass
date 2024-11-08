@@ -1,0 +1,10 @@
+@use "variable";
+
+@mixin reset-footer-layout {
+  background-color: variable.$secondary-color;
+  color: variable.$primary-color;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
