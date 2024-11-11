@@ -1,5 +1,15 @@
-$primary-color:#003459;
-$secondary-color:#FCEED5;
+$primary-color: #003459;
+$secondary-color: #FCEED5;
 $font-family: 'Gilroy', sans-serif;
-$color-description:#00A7E7;
+$color-description: #00A7E7;
 
+$font-size-base: 16px;
+$font-size-large: 18px;
+$font-size-small: 14px;
+$spacing-unit: 10px;
+$border-radius: 5px;
+
+/* Points de rupture responsive */
+$breakpoint-desktop: 1200px; 
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;

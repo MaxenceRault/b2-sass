@@ -1,17 +1,14 @@
-// header.scss
-
-@use "variable";
-@use "mixins" as mixins;
+@use 'variable';
+@use 'mixins' as mixins;
 
 .container {
   background-color: variable.$secondary-color;
   @include mixins.flex-container($direction: column);
 }
 
-/* Header */
 .header {
   @include mixins.flex-container($align: center, $justify: space-around);
-  padding: 10px 20px;
+  padding: variable.$spacing-unit variable.$spacing-unit * 2;
   margin-right: 10%;
 
   &__logo {
@@ -32,17 +29,17 @@
     }
 
     &-item {
-      margin: 0 15px;
+      margin: 0 variable.$spacing-unit * 1.5;
     }
 
     &-link {
       text-decoration: none;
       @include mixins.font-settings(
-        15px,
+        variable.$font-size-small,
         variable.$primary-color,
         $weight: 700,
         $family: variable.$font-family,
-        $line-height: 14px
+        $line-height: variable.$font-size-small
       );
 
       &:hover {
@@ -55,24 +52,24 @@
     @include mixins.button(
       variable.$primary-color,
       #fff,
-      $padding: 10px 60px,
-      $font-size: 16px,
+      $padding: variable.$spacing-unit variable.$spacing-unit * 6,
+      $font-size: variable.$font-size-base,
       $border: none,
-      $border-radius: 20px,
+      $border-radius: variable.$border-radius * 4,
       $hover-bg-color: #555
     );
-    margin-right: 20px;
+    margin-right: variable.$spacing-unit * 2;
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 variable.$spacing-unit * 0.5 rgba(0, 0, 0, 0.3);
     }
   }
 
   &__search {
     @include mixins.flex-container($align: center);
-    @include mixins.border-radius(20px);
-    padding: 5px;
+    @include mixins.border-radius(variable.$border-radius * 4);
+    padding: variable.$spacing-unit * 0.5;
     max-width: 300px;
     width: 100%;
     margin-left: 130px;
@@ -82,7 +79,7 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
-      padding: 5px;
+      padding: variable.$spacing-unit * 0.5;
       @include mixins.flex-container($align: center, $justify: center);
 
       &-img {
@@ -95,11 +92,23 @@
       border: none;
       outline: none;
       flex: 1;
-      padding: 5px;
-      font-size: 16px;
+      padding: variable.$spacing-unit * 0.5;
+      font-size: variable.$font-size-base;
+    }
+  }
+
+  &__burger-menu {
+    display: none;
+    cursor: pointer;
+    margin-left: variable.$spacing-unit * 2;
+
+    img {
+      width: 30px;
+      height: 30px;
     }
   }
 }
+
 
 .accueil {
   @include mixins.flex-container();
@@ -108,7 +117,7 @@
   &__left,
   &__right {
     @include mixins.flex-container($direction: column, $justify: center);
-    padding: 20px;
+    padding: variable.$spacing-unit * 2;
   }
 
   &__left {
@@ -131,49 +140,46 @@
       @include mixins.heading(
         40px,
         variable.$primary-color,
-        $margin: 10px 0,
+        $margin: variable.$spacing-unit variable.$spacing-unit 0,
         $weight: normal
       );
     }
 
     &-text {
       @include mixins.text-style(
-        16px,
+        variable.$font-size-base,
         variable.$primary-color,
-        $margin: 15px 0,
+        $margin: variable.$spacing-unit * 1.5 0,
         $line-height: 1.6
       );
     }
 
     &-btn {
-      position: relative; // Ajouté pour le positionnement absolu du bouton 2
       @include mixins.flex-container($direction: row);
-      gap: 10px;
+      gap: variable.$spacing-unit;
 
       &-1 {
         @include mixins.button(
           $bg-color: #fff,
           $text-color: variable.$primary-color,
-          $padding: 10px 10px,
-          $font-size: 14px,
+          $padding: variable.$spacing-unit variable.$spacing-unit,
+          $font-size: variable.$font-size-small,
           $border: none,
-          $border-radius: 20px
+          $border-radius: variable.$border-radius * 4
         );
         font-weight: 700;
         display: flex;
         align-items: center;
         cursor: pointer;
-        transition: background-color 0.3s ease;
-        border: none;
 
         &-icon {
           @include mixins.flex-container($align: center, $justify: center);
-          width: 24px; // Taille du cercle
+          width: 24px;
           height: 24px;
-          @include mixins.border-radius(50%); // Forme circulaire
+          @include mixins.border-radius(50%);
           background-color: transparent;
-          border: 2px solid variable.$primary-color; // Bordure du cercle
-          margin-left: 10px; // Espace entre le texte et l'icône
+          border: 2px solid variable.$primary-color;
+          margin-left: variable.$spacing-unit;
         }
 
         svg {
@@ -186,31 +192,17 @@
         @include mixins.button(
           $bg-color: variable.$primary-color,
           $text-color: #fff,
-          $padding: 10px 10px,
-          $font-size: 14px,
+          $padding: variable.$spacing-unit variable.$spacing-unit,
+          $font-size: variable.$font-size-small,
           $border: 2px solid variable.$primary-color,
-          $border-radius: 20px
+          $border-radius: variable.$border-radius * 4
         );
         font-weight: 700;
         display: flex;
         align-items: center;
         cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        // Ajustement du positionnement du bouton 2
-        // Au lieu d'utiliser position: absolute, on le laisse dans le flux normal
-        // pour une meilleure réactivité
-        // Supprimer le positionnement absolu
-        // @include mixins.position(
-        //   $position: absolute,
-        //   $left: 400px,
-        //   $top: 585px
-        // );
-
-        // Si vous souhaitez le positionner, utilisez les marges
         margin-left: 150px;
         margin-top: -40px;
-
       }
     }
   }
@@ -226,22 +218,31 @@
   }
 }
 
-/* Media Queries pour la réactivité */
-@media (max-width: 1024px) {
+/* Media Queries */
+@media (max-width: variable.$breakpoint-desktop) {
+  .header {
+    &__nav {
+      display: none;
+    }
+
+    &__burger-menu {
+      display: block;
+    }
+
+    &__search,
+    &__login-btn {
+      display: none;
+    }
+  }
+}
+
+/* Ajustements supplémentaires pour les tablettes */
+@media (max-width: variable.$breakpoint-tablet) {
   .header {
     margin-right: 0;
 
     &__logo {
       margin-left: 0;
-    }
-
-    &__nav {
-      margin-left: 0;
-
-      &-list {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
     }
 
     &__search {
@@ -273,7 +274,7 @@
 
       &-btn {
         flex-direction: column;
-        gap: 10px;
+        gap: variable.$spacing-unit;
 
         &-2 {
           margin-left: 0;
@@ -290,34 +291,19 @@
   }
 }
 
-@media (max-width: 768px) {
+/* Ajustements pour les mobiles */
+@media (max-width: variable.$breakpoint-mobile) {
   .header {
-    flex-direction: column;
-    align-items: center;
-
-    &__nav {
-      &-list {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      &-item {
-        margin: 10px 0;
-      }
-    }
-
     &__login-btn {
-      margin: 10px 0;
+      margin: variable.$spacing-unit 0;
     }
 
     &__search {
-      margin: 10px 0;
+      margin: variable.$spacing-unit 0;
     }
   }
 
   .accueil {
-
-    
     &__left {
       &-title {
         font-size: 36px;
@@ -328,11 +314,10 @@
       }
 
       &-btn {
-
         &-2 {
-          font-size: 12px;
-          margin-left: 0px;
-          margin-top: 10px;
+          font-size: variable.$font-size-small;
+          margin-left: 0;
+          margin-top: variable.$spacing-unit;
         }
       }
     }

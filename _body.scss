@@ -7,21 +7,24 @@
 
 .liste {
   background-color: #fff;
-  margin: 5% 15%;
+  margin: variable.$spacing-unit * 5 variable.$spacing-unit * 15;
 
   &__header {
     @include mixins.flex-container($justify: space-between);
-    padding: 20px;
+    padding: variable.$spacing-unit * 2;
 
     &-left {
       p {
-        @include mixins.font-settings(18px, #666);
+        @include mixins.font-settings(variable.$font-size-base, #666);
         margin: 0;
       }
-
       h2 {
-        @include mixins.font-settings(24px, #333, $weight: bold);
-        margin-top: 10px;
+        @include mixins.font-settings(
+          variable.$font-size-large,
+          #333,
+          $weight: bold
+        );
+        margin-top: variable.$spacing-unit;
       }
     }
 
@@ -33,29 +36,35 @@
   }
 
   &__content {
-    padding: 20px;
+    padding: variable.$spacing-unit * 2;
 
     &__display {
       @include mixins.flex-container($wrap: wrap, $justify: center);
-      gap: 20px;
+      gap: variable.$spacing-unit * 2;
 
       &__card {
-        @include mixins.card(#f9f9f9, #ddd, 8px, 15px, 200px);
+        @include mixins.card(
+          #f9f9f9,
+          #ddd,
+          variable.$border-radius * 1.6,
+          variable.$spacing-unit * 1.5,
+          200px
+        );
         text-align: center;
 
         &__img {
           @include mixins.responsive-img();
-          margin-bottom: 10px;
+          margin-bottom: variable.$spacing-unit;
         }
 
         &__title {
-          @include mixins.heading(18px);
-          margin: 10px 0 5px;
+          @include mixins.heading(variable.$font-size-base + 2px);
+          margin: variable.$spacing-unit variable.$spacing-unit 0;
         }
 
         &__info {
-          @include mixins.text-style(14px);
-          margin-bottom: 5px;
+          @include mixins.text-style(variable.$font-size-small);
+          margin-bottom: variable.$spacing-unit * 0.5;
 
           strong {
             color: #333;
@@ -63,8 +72,12 @@
         }
 
         &__price {
-          @include mixins.font-settings(16px, #003459, $weight: bold);
-          margin-top: 10px;
+          @include mixins.font-settings(
+            variable.$font-size-base,
+            #003459,
+            $weight: bold
+          );
+          margin-top: variable.$spacing-unit;
         }
       }
     }
@@ -73,13 +86,13 @@
 
 .intro-section {
   @include mixins.flex-container($align: center);
-  margin: 5% 15%;
+  margin: variable.$spacing-unit * 5 variable.$spacing-unit * 15;
   background-color: variable.$secondary-color;
-  border-radius: 20px;
+  border-radius: variable.$border-radius * 4;
 
   &__image {
     width: 50%;
-    padding-right: 20px;
+    padding-right: variable.$spacing-unit * 2;
 
     &-img {
       @include mixins.responsive-img();
@@ -89,7 +102,7 @@
   &__content {
     width: 50%;
     @include mixins.flex-container($direction: column);
-    padding-left: 20px;
+    padding-left: variable.$spacing-unit * 2;
     color: variable.$primary-color;
     text-align: end;
     margin-right: 10%;
@@ -101,16 +114,20 @@
 
     &__subtitle {
       @include mixins.font-settings(24px, variable.$primary-color);
-      margin: 10px 0;
+      margin: variable.$spacing-unit variable.$spacing-unit 0;
     }
 
     &__text {
-      @include mixins.text-style(16px, variable.$primary-color, 15px 0);
+      @include mixins.text-style(
+        variable.$font-size-base,
+        variable.$primary-color,
+        variable.$spacing-unit * 1.5 0
+      );
     }
 
     &__buttons {
       @include mixins.flex-container($justify: flex-end);
-      gap: 10px;
+      gap: variable.$spacing-unit;
       margin-left: auto;
     }
   }
@@ -119,10 +136,10 @@
     @include mixins.button(
       #fff,
       variable.$primary-color,
-      10px 10px,
-      16px,
+      variable.$spacing-unit variable.$spacing-unit,
+      variable.$font-size-base,
       none,
-      20px
+      variable.$border-radius * 4
     );
     font-weight: 700;
     display: flex;
@@ -151,28 +168,31 @@
       @include mixins.border-radius(50%);
       background-color: transparent;
       border: 2px solid #003459;
-      margin-left: 8px;
+      margin-left: variable.$spacing-unit * 0.8;
     }
   }
 }
 
 .pet {
   background-color: #fff;
-  margin: 5% 15%;
+  margin: variable.$spacing-unit * 5 variable.$spacing-unit * 15;
 
   &__header {
     @include mixins.flex-container($justify: space-between);
-    padding: 20px;
+    padding: variable.$spacing-unit * 2;
 
     &-left {
       p {
-        @include mixins.font-settings(18px, #666);
+        @include mixins.font-settings(variable.$font-size-base, #666);
         margin: 0;
       }
-
       h2 {
-        @include mixins.font-settings(24px, #333, $weight: bold);
-        margin-top: 10px;
+        @include mixins.font-settings(
+          variable.$font-size-large,
+          #333,
+          $weight: bold
+        );
+        margin-top: variable.$spacing-unit;
       }
     }
 
@@ -184,42 +204,48 @@
   }
 
   &__content {
-    padding: 20px;
+    padding: variable.$spacing-unit * 2;
 
     &__display {
       @include mixins.flex-container($wrap: wrap, $justify: center);
-      gap: 20px;
+      gap: variable.$spacing-unit * 2;
 
       &__card {
-        @include mixins.card(#fff, #ddd, 8px, 15px, 290px);
+        @include mixins.card(
+          #fff,
+          #ddd,
+          variable.$border-radius * 1.6,
+          variable.$spacing-unit * 1.5,
+          290px
+        );
         text-align: justify;
 
         &__img {
           width: 100%;
           height: 180px;
           object-fit: cover;
-          @include mixins.border-radius(8px);
-          margin-bottom: 10px;
+          @include mixins.border-radius(variable.$border-radius * 1.6);
+          margin-bottom: variable.$spacing-unit;
         }
 
         &__title {
-          @include mixins.heading(18px);
-          margin: 10px 0 5px;
+          @include mixins.heading(variable.$font-size-base + 2px);
+          margin: variable.$spacing-unit variable.$spacing-unit 0;
         }
 
         &__knowledge {
           background: #007bff;
-          padding: 5px;
+          padding: variable.$spacing-unit * 0.5;
           color: #fff;
-          @include mixins.border-radius(20px);
+          @include mixins.border-radius(variable.$border-radius * 4);
           margin-top: -10px;
-          margin-bottom: 5px;
+          margin-bottom: variable.$spacing-unit * 0.5;
           display: inline-block;
         }
 
         &__info {
-          @include mixins.text-style(14px);
-          margin-bottom: 5px;
+          @include mixins.text-style(variable.$font-size-small);
+          margin-bottom: variable.$spacing-unit * 0.5;
 
           strong {
             color: #333;
@@ -230,15 +256,22 @@
   }
 }
 
-// Réactivité pour les mobiles
-@media (max-width: 768px) {
+/* Media Queries */
+
+/* Pour les tablettes */
+@media (max-width: variable.$breakpoint-tablet) {
   .liste,
   .pet {
-    margin: 5% 5%;
+    margin: variable.$spacing-unit * 4 variable.$spacing-unit * 5;
+  }
+
+  .liste__content__display__card,
+  .pet__content__display__card {
+    width: calc(50% - variable.$spacing-unit * 2);
   }
 
   .intro-section {
-    @include mixins.flex-container($direction: column);
+    margin: variable.$spacing-unit * 4 variable.$spacing-unit * 5;
 
     &__image,
     &__content {
@@ -251,10 +284,79 @@
     &__buttons {
       justify-content: center;
     }
+
+    &__content {
+      margin-right: 0;
+      padding: variable.$spacing-unit * 2;
+    }
+  }
+}
+
+/* Pour les mobiles */
+@media (max-width: variable.$breakpoint-mobile) {
+  .liste,
+  .pet {
+    margin: variable.$spacing-unit * 3 variable.$spacing-unit * 2;
+  }
+
+  .liste__header,
+  .pet__header {
+    @include mixins.flex-container($direction: column, $align: flex-start);
+    gap: variable.$spacing-unit * 2;
+    padding: variable.$spacing-unit;
+
+    &-left,
+    &-right {
+      width: 100%;
+    }
   }
 
   .liste__content__display__card,
   .pet__content__display__card {
     width: 100%;
+    margin-bottom: variable.$spacing-unit * 2;
+  }
+
+  .intro-section {
+    margin: variable.$spacing-unit * 3 variable.$spacing-unit * 2;
+
+    &__image,
+    &__content {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__buttons {
+      justify-content: center;
+    }
+
+    &__content {
+      margin-right: 0;
+      padding: variable.$spacing-unit;
+    }
+
+    &__btn {
+      margin-left: 0;
+
+      &--primary,
+      &--secondary {
+        margin-left: 0;
+        margin-top: variable.$spacing-unit;
+      }
+    }
+  }
+
+  .intro-section__content__title {
+    font-size: 28px;
+  }
+
+  .intro-section__content__subtitle {
+    font-size: 20px;
+  }
+
+  .intro-section__content__text {
+    font-size: variable.$font-size-small;
   }
 }

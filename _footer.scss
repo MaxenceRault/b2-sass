@@ -4,112 +4,95 @@
 .footer {
   @include mixins.reset-footer-layout;
   font-family: variable.$font-family;
-  padding-top: 100px;
-
+  padding-top: variable.$spacing-unit * 10;
   &__subscribe {
     background-color: #002855;
     @include mixins.flex-container($align: center, $justify: space-between);
     color: #fff;
-    padding: 20px;
-    @include mixins.border-radius(15px);
+    padding: variable.$spacing-unit * 2;
+    @include mixins.border-radius(variable.$border-radius * 3);
     max-width: 1000px;
-    margin: 0 auto 20px auto;
-
+    margin: 0 auto variable.$spacing-unit * 2 auto;
     &-text {
       @include mixins.font-settings(1.2rem, #fff);
       flex: 1;
-      margin-left: 20px;
+      margin-left: variable.$spacing-unit * 2;
       text-align: left;
     }
-
     &-form {
       @include mixins.flex-container($align: center);
-      gap: 10px;
+      gap: variable.$spacing-unit;
       background-color: #fff;
-      @include mixins.border-radius(10px);
-      padding: 5px 10px;
-
+      @include mixins.border-radius(variable.$border-radius * 2);
+      padding: variable.$spacing-unit * 0.5 variable.$spacing-unit;
       &-input {
-        padding: 10px;
+        padding: variable.$spacing-unit;
         border: solid 1px #666;
-        @include mixins.border-radius(10px);
+        @include mixins.border-radius(variable.$border-radius * 2);
         width: 250px;
       }
-
       &-button {
         @include mixins.button(
           #003459,
           #fff,
-          10px 20px,
+          variable.$spacing-unit variable.$spacing-unit * 2,
           null,
           none,
-          5px,
+          variable.$border-radius,
           #ff5b4d
         );
       }
     }
   }
-
   &__middle {
     @include mixins.flex-container($justify: space-between, $align: center);
-    margin: 20px auto;
-    padding-bottom: 10px;
+    margin: variable.$spacing-unit * 2 auto;
+    padding-bottom: variable.$spacing-unit;
     border-bottom: solid 1px #ccc;
     max-width: 1000px;
   }
-
   &__nav {
     &-list {
       list-style: none;
       @include mixins.flex-container();
-      gap: 30px;
+      gap: variable.$spacing-unit * 3;
       padding: 0;
     }
-
     &-link {
       text-decoration: none;
       @include mixins.font-settings(1rem, #333);
-
       &:hover {
         color: #000;
       }
     }
   }
-
   &__social {
     &-icon {
-      margin: 0 10px;
+      margin: 0 variable.$spacing-unit;
       display: inline-block;
-
       img {
         @include mixins.responsive-img(20px, 20px, cover, 0);
       }
     }
   }
-
   &__bottom {
     @include mixins.flex-container($justify: space-evenly, $align: center);
-    padding-top: 20px;
-
+    padding-top: variable.$spacing-unit * 2;
     &-text {
       @include mixins.font-settings(0.9rem, #666);
     }
-
     &-logo {
       img {
         width: 100px;
       }
     }
-
     &-links {
       @include mixins.flex-container();
-      gap: 15px;
+      gap: variable.$spacing-unit * 1.5;
       text-decoration: none;
-
       &-link {
         text-decoration: none;
         @include mixins.font-settings(0.9rem, #333);
-
         &:hover {
           color: #000;
         }
@@ -118,53 +101,44 @@
   }
 }
 
-// Ajout de la réactivité pour les mobiles
-@media (max-width: 768px) {
+@media (max-width: variable.$breakpoint-mobile) {
   .footer {
-    padding-top: 50px;
-
+    padding-top: variable.$spacing-unit * 5;
     &__subscribe {
       @include mixins.flex-container($direction: column, $align: center);
       text-align: center;
-      padding: 20px;
-      margin: 0 10px 20px 10px;
-
+      padding: variable.$spacing-unit * 2;
+      margin: 0 variable.$spacing-unit variable.$spacing-unit * 2 variable.$spacing-unit;
       &-text {
         margin-left: 0;
-        margin-bottom: 20px;
+        margin-bottom: variable.$spacing-unit * 2;
       }
-
       &-form {
         @include mixins.flex-container($direction: column);
-        gap: 10px;
-
+        gap: variable.$spacing-unit;
         &-input {
           width: 100%;
         }
       }
     }
-
     &__middle {
       @include mixins.flex-container($direction: column, $align: center);
-      margin: 20px 10px;
+      margin: variable.$spacing-unit * 2 variable.$spacing-unit;
       text-align: center;
-
       &__nav {
         &-list {
           @include mixins.flex-container($direction: column);
-          gap: 15px;
+          gap: variable.$spacing-unit * 1.5;
         }
       }
     }
-
     &__bottom {
       @include mixins.flex-container($direction: column, $align: center);
       text-align: center;
-      gap: 20px;
-
+      gap: variable.$spacing-unit * 2;
       &-links {
         @include mixins.flex-container($direction: column);
-        gap: 10px;
+        gap: variable.$spacing-unit;
       }
     }
   }
